@@ -14,6 +14,18 @@ it('throws an exception when due', function () {
         ->toThrow(Exception::class, 'TODO: "Test task" came due on 2023-01-01. Do it!');
 });
 
+it('calls custom handler when condition is met', function () {
+    $handlerCalled = false;
+    $handler = function ($message, $by) use (&$handlerCalled) {
+        $handlerCalled = true;
+        expect($message)->toBe('Conditional task')->and($by)->toBeNull();
+    };
+
+    TodoOrDie::config(['die' => $handler]);
+    TodoOrDie::check('Conditional task', null, fn () => true);
+    expect($handlerCalled)->toBeTrue();
+});
+
 it('calls custom handler when due', function () {
     $handlerCalled = false;
     $handler = function ($message, $by) use (&$handlerCalled) {
