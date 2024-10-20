@@ -1,0 +1,48 @@
+{
+    "name": "vangelis/todoordie",
+    "description": "Write TODOs in code that ensure you actually do them",
+    "keywords": [
+        "todo",
+        "todoordie"
+    ],
+    "homepage": "https://github.com/vangelis/todoordie",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evangelos Dimitriadis",
+            "email": "packagist.evasion583@passmail.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.20",
+        "laravel/pint": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vangelis\\TodoOrDie\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vangelis\\TodoOrDie\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+            "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
