@@ -39,7 +39,7 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true,
+            "pestphp/pest-plugin": "^3.5",
             "phpstan/extension-installer": true
         }
     },
